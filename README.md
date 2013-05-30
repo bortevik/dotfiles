@@ -11,6 +11,9 @@ Run the following commands in your terminal. It will prompt you before it does a
 git clone git://github.com/Bortevik/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
+
+# to install vim plugins run in terminal
+vundle
 ```
 
 After installing, open a new terminal window to see the effects.

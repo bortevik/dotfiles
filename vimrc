@@ -152,8 +152,6 @@ Bundle "tomtom/tcomment_vim"
 Bundle "scrooloose/syntastic"
 Bundle "YankRing.vim"
 Bundle "TaskList.vim"
-Bundle "aaronbieber/quicktask"
-let g:quicktask_autosave = 1
 
 " This fork is required due to remapping ; to :
 Bundle 'Lokaltog/vim-easymotion'

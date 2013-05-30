@@ -6,6 +6,7 @@ task :install do
   install_oh_my_zsh
   switch_to_zsh
   install_tmux
+  install_vim
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
   files << "oh-my-zsh/custom/plugins/bortevik"
@@ -109,6 +110,24 @@ def install_tmux
       exit
     else
       puts "skipping tmux"
+    end
+  end
+end
+
+def install_vim
+  if File.exist?(File.join(ENV['HOME'], ".vim/bundle/vundle"))
+    puts "found ~/.vim"
+  else
+    print "install vim? [ynq] "
+    case $stdin.gets.chomp
+    when 'y'
+      puts "installing vim"
+      system %Q{git clone https://github.com/gmarik/vundle.git "$HOME/.vim/bundle/vundle"}
+      Dir.mkdir(File.join(ENV['HOME'], '.vim/.undo'), 0755)
+    when 'q'
+      exit
+    else
+      puts "skipping vim"
     end
   end
 end

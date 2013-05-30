@@ -6,6 +6,9 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
+# autocorrect is more annoying than helpful
+unsetopt correct_all
+
 alias go='git checkout '
 alias gob='git checkout -b'
 alias gbd='git branch -d'
