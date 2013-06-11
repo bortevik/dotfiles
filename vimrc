@@ -121,6 +121,12 @@ vnoremap <Leader>o <C-C>:ZoomWin<CR>
 inoremap <Leader>o <C-O>:ZoomWin<CR>
 noremap <C-W>+o :ZoomWin<CR>
 
+" Yanking hictory management
+Bundle "YankRing.vim"
+let g:yankring_replace_n_pkey = '<C-M>'
+nnoremap <silent> ,yy :YRShow<CR>
+nnoremap <silent> ,yc :YRClear<CR>
+
 " CtrlP -------
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
@@ -150,7 +156,6 @@ Bundle "ecomba/vim-ruby-refactoring"
 Bundle "matchit.zip"
 Bundle "tomtom/tcomment_vim"
 Bundle "scrooloose/syntastic"
-Bundle "YankRing.vim"
 Bundle "TaskList.vim"
 
 " This fork is required due to remapping ; to :
