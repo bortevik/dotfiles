@@ -8,7 +8,7 @@ task :install do
   install_tmux
   install_vim
   replace_all = false
-  files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
+  files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh]
   files << "oh-my-zsh/custom/plugins/bortevik"
   files << "oh-my-zsh/custom/bortevik.zsh-theme"
   files.each do |file|
