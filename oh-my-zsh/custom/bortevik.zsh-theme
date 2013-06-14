@@ -2,7 +2,7 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 
 if [[ -n $SSH_CONNECTION ]]; then
-  PROMPT='%m:%{$fg[blue]%}[%25<...<%~%<<]%{$fg[$NCOLOR]%}%#%{$reset_color%} '
+  PROMPT='%{$fg_bold[green]%}%n@%m:%{$fg[blue]%}[%25<...<%~%<<]%{$fg[$NCOLOR]%}%#%{$reset_color%} '
 else
   PROMPT='%{$fg[cyan]%}[%25<...<%~%<<]%{$fg[$NCOLOR]%}%#%{$reset_color%} '
 fi
