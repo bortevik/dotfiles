@@ -52,6 +52,7 @@ Bundle 'tpope/vim-rails'
 Bundle "tpope/vim-rake"
 Bundle "tpope/vim-bundler"
 Bundle 'tpope/vim-cucumber'
+Bundle 'ecomba/vim-ruby-refactoring'
 
 " NERDTree
 Bundle 'scrooloose/nerdtree'
@@ -130,7 +131,7 @@ nnoremap <silent> ,yc :YRClear<CR>
 " CtrlP -------
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_custom_ignore = '/\.\|\.o\|\.so'
+let g:ctrlp_custom_ignore = '/\.\|\.o\|\.so\|vendor\|tmp'
 let g:ctrlp_open_new_file='r'
 let g:ctrlp_max_height=30
 let g:ctrlp_lazy_update=1
@@ -157,14 +158,14 @@ Bundle "matchit.zip"
 Bundle "tomtom/tcomment_vim"
 Bundle "scrooloose/syntastic"
 Bundle "TaskList.vim"
+Bundle "mileszs/ack.vim"
+Bundle "AutoComplPop"
+Bundle 'IndexedSearch'
+Bundle 'Raimondi/delimitMate'
+Bundle 'AutoTag'
 
 " This fork is required due to remapping ; to :
 Bundle 'Lokaltog/vim-easymotion'
-
-" Automatic Helpers
-"Bundle 'IndexedSearch'
-"Bundle 'xolox/vim-session'
-"Bundle 'Raimondi/delimitMate'
 
 filetype plugin indent on     " required!
 
@@ -228,12 +229,18 @@ map <Leader>ss :setlocal spell!<cr>
 map <Leader>/ :nohlsearch<cr>
 
 "--------------------------
-" Run Rspec tests
+" Ctags options
 "--------------------------
-map <Leader>rr :w<CR> :exe '! rspec ' . @% . ':' . line('.')<CR>
-map <Leader>rf :w<CR> :exe '! rspec ' . @%<CR>
-map <Leader>fr :w<CR> :exe '! rspec -fd ' . @% . ':' . line('.')<CR>
-map <Leader>ff :w<CR> :exe '! rspec -fd ' . @%<CR>
+"set tags+=./tags;/
+map <leader>] <C-]>
+map <leader>]p <C-T>
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <leader>]v :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <leader>]h :sp <CR>:exec("tag ".expand("<cword>"))<CR>
+autocmd BufWritePost *
+      \ if filereadable('tags') |
+      \   call system('ctags -a '.expand('%')) |
+      \ endif
 
 "--------------------------
 " Misc
