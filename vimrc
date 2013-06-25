@@ -156,7 +156,6 @@ Bundle "msanders/snipmate.vim"
 Bundle "ecomba/vim-ruby-refactoring"
 Bundle "matchit.zip"
 Bundle "tomtom/tcomment_vim"
-Bundle "scrooloose/syntastic"
 Bundle "TaskList.vim"
 Bundle "mileszs/ack.vim"
 Bundle "AutoComplPop"
@@ -254,6 +253,9 @@ set diffopt=filler,iwhite       " In diff mode, ignore whitespace changes and al
 set scrolloff=3                 " Start scrolling 3 lines before the horizontal window border
 set noerrorbells                " Disable error bells
 set cpoptions+=$                " Put '$' at the end of the changed text
+
+" Check syntax for ruby
+autocmd FileType ruby map <F9> :w !ruby -c<CR>
 
 " up/down on displayed lines, not real lines. More useful than painful.
 noremap k gk
