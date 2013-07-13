@@ -70,6 +70,9 @@ nmap <Leader>gp :Git push<CR>
  " Mnemonic, gu = Git Update
 nmap <Leader>gu :Git pull<CR>
 nmap <Leader>gd :Gdiff<CR>
+nmap <Leader>dgl :diffget //2<CR> :diffupdate<CR>
+nmap <Leader>dgr :diffget //3<CR> :diffupdate<CR>
+nmap <Leader>do :only<CR>
 " Exit a diff by closing the diff window
 nmap <Leader>gx :wincmd h<CR>:q<CR>
 
@@ -98,12 +101,8 @@ map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
 " MiniBufExplorer ----------
 Bundle "fholgado/minibufexpl.vim"
-map <Leader>l :MiniBufExplorer<cr>
-let g:miniBufExplorerMoreThanOne = 10000
-let g:miniBufExplModSelTarget = 1
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplSplitBelow=1
-let g:miniBufExplMapCTabSwitchBufs = 1
+map <Leader>l :MBEToggle<CR>
+let g:miniBufExplBRSplit=1
 let g:miniBufExplVSplit = 35
 
 " Tabular --------
@@ -222,10 +221,25 @@ if bufwinnr(1)
 endif
 
 "--------------------------
+" Moving between splits
+"--------------------------
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+"--------------------------
 " Keybindings to native vim features
 "--------------------------
 map <Leader>ss :setlocal spell!<cr>
 map <Leader>/ :nohlsearch<cr>
+
+"--------------------------
+" Edit another file in same directory
+"--------------------------
+map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 "--------------------------
 " Ctags options
