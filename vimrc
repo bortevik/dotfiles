@@ -235,6 +235,11 @@ map <Leader>ss :setlocal spell!<cr>
 map <Leader>/ :nohlsearch<cr>
 
 "--------------------------
+" Git blame to how modified lines
+"--------------------------
+vmap <leader>w :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+"--------------------------
 " Edit another file in same directory
 "--------------------------
 map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
