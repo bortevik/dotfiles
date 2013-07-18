@@ -43,6 +43,7 @@ Bundle "tpope/vim-haml"
 Bundle "slim-template/vim-slim"
 Bundle "groenewege/vim-less"
 Bundle "ap/vim-css-color"
+Bundle 'heartsentwined/vim-emblem'
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
 " Toggle between do/end and curly brackets
@@ -102,8 +103,9 @@ map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 " MiniBufExplorer ----------
 Bundle "fholgado/minibufexpl.vim"
 map <Leader>l :MBEToggle<CR>
-let g:miniBufExplBRSplit=1
+let g:miniBufExplBRSplit = 1
 let g:miniBufExplVSplit = 35
+let g:miniBufExplAutoStart = 0
 
 " Tabular --------
 Bundle 'godlygeek/tabular'
