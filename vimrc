@@ -82,9 +82,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup=1
 
 " Powerline ----------
-"Bundle 'Lokaltog/vim-powerline'
+" Bundle 'bling/vim-airline'
 set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
-set laststatus=2   " Always show the statusline
 
 " Screen -------------
 Bundle "ervandew/screen"
@@ -102,7 +101,7 @@ map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
 " MiniBufExplorer ----------
 Bundle "fholgado/minibufexpl.vim"
-map <Leader>l :MBEToggle<CR>
+map <Leader>l :MBEToggle<CR>:MBEFocus<CR>
 let g:miniBufExplBRSplit = 1
 let g:miniBufExplVSplit = 35
 let g:miniBufExplAutoStart = 0
@@ -208,18 +207,25 @@ if $TERM =~ '256color'
 elseif $TERM =~ '^xterm$'
   set t_Co=256
 endif
+set laststatus=2   " Always show the statusline
 set background=dark
 colorscheme jellybeans
+
+"--------------------------
+" Copy/paste from/to Window Clipboard
+"--------------------------
+set clipboard=unnamed            " Paste to vim from Window Clipboard
+set go+=a                        " Copy from vim to Window Clipboard
 
 "--------------------------
 " Resizing splits
 "--------------------------
 if bufwinnr(1)
-  map = <C-W>=
-  map + <C-W>+
-  map - <C-W>-
-  map <c-n> <C-w><
-  map <c-m> <C-w>>
+  nmap = <C-W>=
+  nmap + <C-W>+
+  nmap - <C-W>-
+  nmap <c-n> <C-w><
+  nmap <c-m> <C-w>>
 endif
 
 "--------------------------
