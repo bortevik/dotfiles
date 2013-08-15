@@ -92,11 +92,10 @@ let g:ScreenShellTmuxInitArgs = '-2'
 let g:ScreenShellQuitOnVimExit = 0
 let g:ScreenShellHeight = 10
 map <F5> :ScreenShell<CR>
-"command -nargs=? -complete=shellcmd W  :w | :call ScreenShellSend("load '".@%."';")
 map <Leader>cc :ScreenShell bundle exec rails c<CR>
 map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@%.':'.line('.'))<CR>
 map <Leader>R :w<CR> :call ScreenShellSend("rspec ".@%)<CR>
-map <Leader>e :w<CR> :call ScreenShellSend("cucumber --format=pretty ".@% . ':' . line('.'))<CR>
+map <Leader>c :w<CR> :call ScreenShellSend("bundle exec cucumber --format=pretty ".@%.':'.line('.'))<CR>
 map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
 " MiniBufExplorer ----------
@@ -158,7 +157,8 @@ Bundle "matchit.zip"
 Bundle "tomtom/tcomment_vim"
 Bundle "TaskList.vim"
 Bundle "mileszs/ack.vim"
-Bundle "AutoComplPop"
+" Bundle "AutoComplPop"
+Bundle "Valloric/YouCompleteMe"
 Bundle 'IndexedSearch'
 Bundle 'Raimondi/delimitMate'
 Bundle 'AutoTag'
@@ -212,7 +212,7 @@ set background=dark
 colorscheme jellybeans
 
 "--------------------------
-" Copy/paste from/to Window Clipboard
+" Copy/paste from/to Window clipboard
 "--------------------------
 set clipboard=unnamed            " Paste to vim from Window Clipboard
 set go+=a                        " Copy from vim to Window Clipboard
@@ -238,8 +238,8 @@ noremap <C-L> <C-W>l
 
 "--------------------------
 " Keybindings to native vim features
-"--------------------------
-map <Leader>ss :setlocal spell!<cr>
+nnoremap <leader>s :%s/
+vnoremap <leader>s :%s/
 map <Leader>/ :nohlsearch<cr>
 
 "--------------------------
@@ -250,9 +250,15 @@ vmap <leader>w :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'
 "--------------------------
 " Edit another file in same directory
 "--------------------------
-map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>ee :e <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>es :split <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>ev :vnew <C-R>=expand("%:p:h") . '/'<CR>
+
+"--------------------------
+" Subsitude
+"--------------------------
+nnoremap <leader>s :%s/
+vnoremap <leader>s :%s/
 
 "--------------------------
 " Ctags options
@@ -293,7 +299,18 @@ noremap j gj
 "--------------------------
 set foldenable  
 set foldmethod=syntax
-set foldlevel=1 
+set foldlevel=1
+
+"--------------------------
+" Hamlc syntax highliting
+"--------------------------
+au BufRead,BufNewFile *.hamlc set ft=haml
+
+"--------------------------
+" Editing vimrc
+"--------------------------
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 "--------------------------
 " Indentation and tabbing
