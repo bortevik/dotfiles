@@ -215,7 +215,8 @@ colorscheme jellybeans
 " Copy/paste from/to Window clipboard
 "--------------------------
 set clipboard=unnamed            " Paste to vim from Window Clipboard
-set go+=a                        " Copy from vim to Window Clipboard
+nnoremap <C-y> "+y
+vnoremap <C-y> "+y
 
 "--------------------------
 " Resizing splits
@@ -302,9 +303,12 @@ set foldmethod=syntax
 set foldlevel=1
 
 "--------------------------
-" Hamlc syntax highliting
+" Sintax highlighting
 "--------------------------
+" Hamlc syntax highlighting
 au BufRead,BufNewFile *.hamlc set ft=haml
+" add jbuilder syntax highlighting
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 
 "--------------------------
 " Editing vimrc

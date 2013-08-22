@@ -29,3 +29,11 @@ function populate {
   rake db:seed
   rake db:test:prepare
 }
+function redb {
+  rake db:drop
+  rake db:create
+  rake db:migrate
+  rake db:populate
+  rake db:seed
+  rake db:test:prepare
+}
