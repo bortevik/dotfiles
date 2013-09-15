@@ -14,7 +14,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 nmap <Leader>bi :BundleInstall<CR>
 nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
@@ -82,8 +82,16 @@ Bundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup=1
 
 " Powerline ----------
-" Bundle 'bling/vim-airline'
-set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
+Bundle 'bling/vim-airline'
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols = {}
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+" set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
 
 " Screen -------------
 Bundle "ervandew/screen"
@@ -298,7 +306,7 @@ noremap j gj
 "--------------------------
 " Folding
 "--------------------------
-set foldenable  
+set foldenable
 set foldmethod=syntax
 set foldlevel=1
 
