@@ -37,3 +37,5 @@ function redb {
   rake db:seed
   rake db:test:prepare
 }
+
+alias ccb="bundle exec cucumber $1 --require features"

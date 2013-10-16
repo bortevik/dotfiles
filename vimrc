@@ -103,7 +103,8 @@ map <F5> :ScreenShell<CR>
 map <Leader>cc :ScreenShell bundle exec rails c<CR>
 map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@%.':'.line('.'))<CR>
 map <Leader>R :w<CR> :call ScreenShellSend("rspec ".@%)<CR>
-map <Leader>c :w<CR> :call ScreenShellSend("bundle exec cucumber --format=pretty ".@%.':'.line('.'))<CR>
+map <Leader>c :w<CR> :call ScreenShellSend("bundle exec cucumber ".@%.":".line('.')." --require features")<CR>
+map <Leader>C :w<CR> :call ScreenShellSend("bundle exec cucumber ".@%." --require features")<CR>
 map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
 " MiniBufExplorer ----------
