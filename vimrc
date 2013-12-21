@@ -71,8 +71,8 @@ nmap <Leader>gp :Git push<CR>
  " Mnemonic, gu = Git Update
 nmap <Leader>gu :Git pull<CR>
 nmap <Leader>gd :Gdiff<CR>
-nmap <Leader>dgl :diffget //2<CR> :diffupdate<CR>
-nmap <Leader>dgr :diffget //3<CR> :diffupdate<CR>
+nmap <Leader>dgl :diffget LO<CR> :diffupdate<CR>
+nmap <Leader>dgr :diffget RE<CR> :diffupdate<CR>
 nmap <Leader>do :only<CR>
 " Exit a diff by closing the diff window
 nmap <Leader>gx :wincmd h<CR>:q<CR>
@@ -166,11 +166,11 @@ Bundle "matchit.zip"
 Bundle "tomtom/tcomment_vim"
 Bundle "TaskList.vim"
 Bundle "mileszs/ack.vim"
-" Bundle "AutoComplPop"
 Bundle "Valloric/YouCompleteMe"
 Bundle 'IndexedSearch'
 Bundle 'Raimondi/delimitMate'
 Bundle 'AutoTag'
+Bundle 'chrisbra/NrrwRgn'
 
 " This fork is required due to remapping ; to :
 Bundle 'Lokaltog/vim-easymotion'
