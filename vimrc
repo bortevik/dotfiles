@@ -30,7 +30,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'leshill/vim-json'
 "   HTML
-Bundle 'nono/vim-handlebars'
+Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'othree/html5.vim'
 Bundle 'indenthtml.vim'
 "   Other Languages
@@ -44,6 +44,7 @@ Bundle "slim-template/vim-slim"
 Bundle "groenewege/vim-less"
 Bundle "ap/vim-css-color"
 Bundle 'heartsentwined/vim-emblem'
+Bundle 'dsawardekar/ember.vim'
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
 " Toggle between do/end and curly brackets
@@ -91,7 +92,6 @@ let g:airline_symbols = {}
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
-" set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim
 
 " Screen -------------
 Bundle "ervandew/screen"
@@ -170,7 +170,10 @@ Bundle "Valloric/YouCompleteMe"
 Bundle 'IndexedSearch'
 Bundle 'Raimondi/delimitMate'
 Bundle 'AutoTag'
-Bundle 'chrisbra/NrrwRgn'
+
+Bundle 'scrooloose/syntastic'
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
 
 " This fork is required due to remapping ; to :
 Bundle 'Lokaltog/vim-easymotion'
