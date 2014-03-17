@@ -5,7 +5,6 @@ plugins=(git colored-man debian heroku rails vundle bortevik)
 
 export EDITOR=vim
 export VISUAL=vim
-export PATH=$HOME/.rbenv/bin:$PATH:/usr/local/bin:/usr/bin:/bin
-eval "$(rbenv init -)"
+export PATH=/usr/local/share/npm/bin:$PATH:/usr/local/bin:/usr/bin:/bin
 
 source $ZSH/oh-my-zsh.sh

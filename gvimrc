@@ -1,6 +1,6 @@
-set guioptions-=T " hide toolbar
+set guioptions-=L " hide toolbar
 set lines=55 columns=100
 
 colorscheme jellybeans
 
-set guifont=DejaVu\ Sans\ Mono:h13
+set guifont=Monaco:h14

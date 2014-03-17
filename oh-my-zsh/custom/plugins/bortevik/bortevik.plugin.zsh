@@ -39,3 +39,9 @@ function redb {
 }
 
 alias ccb="bundle exec cucumber $1 --require features"
+
+alias start_mysql="/usr/local/Cellar/mysql/5.6.16/support-files/mysql.server start"
+alias stop_mysql="/usr/local/Cellar/mysql/5.6.16/support-files/mysql.server stop"
+
+alias start_elasticsearch="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
+alias stop_elasticsearch="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
