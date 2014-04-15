@@ -13,7 +13,7 @@ alias go='git checkout '
 alias gob='git checkout -b'
 alias gbd='git branch -d'
 
-alias ls='ls -h --color=auto'
+alias ls='ls -hG'
 
 ## rails
 alias rgc='rails generate controller'
@@ -45,3 +45,5 @@ alias stop_mysql="/usr/local/Cellar/mysql/5.6.16/support-files/mysql.server stop
 
 alias start_elasticsearch="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 alias stop_elasticsearch="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
+
+alias ctags="`brew --prefix`/bin/ctags"
