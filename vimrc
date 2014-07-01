@@ -94,18 +94,18 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
 " Screen -------------
-Bundle "ervandew/screen"
-let g:ScreenImpl = 'Tmux'
-let g:ScreenShellTmuxInitArgs = '-2'
-let g:ScreenShellQuitOnVimExit = 0
-let g:ScreenShellHeight = 10
-map <F5> :ScreenShell<CR>
-map <Leader>cc :ScreenShell bundle exec rails c<CR>
-map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@%.':'.line('.'))<CR>
-map <Leader>R :w<CR> :call ScreenShellSend("rspec ".@%)<CR>
-map <Leader>c :w<CR> :call ScreenShellSend("bundle exec cucumber ".@%.":".line('.')." --require features")<CR>
-map <Leader>C :w<CR> :call ScreenShellSend("bundle exec cucumber ".@%." --require features")<CR>
-map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
+" Bundle "ervandew/screen"
+" let g:ScreenImpl = 'Tmux'
+" let g:ScreenShellTmuxInitArgs = '-2'
+" let g:ScreenShellQuitOnVimExit = 0
+" let g:ScreenShellHeight = 10
+" map <F5> :ScreenShell<CR>
+" map <Leader>cc :ScreenShell bundle exec rails c<CR>
+" map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@%.':'.line('.'))<CR>
+" map <Leader>R :w<CR> :call ScreenShellSend("rspec ".@%)<CR>
+" map <Leader>c :w<CR> :call ScreenShellSend("bundle exec cucumber ".@%.":".line('.')." --require features")<CR>
+" map <Leader>C :w<CR> :call ScreenShellSend("bundle exec cucumber ".@%." --require features")<CR>
+" map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
 
 " MiniBufExplorer ----------
 Bundle "fholgado/minibufexpl.vim"
@@ -306,6 +306,9 @@ autocmd FileType ruby map <F9> :w !ruby -c<CR>
 " up/down on displayed lines, not real lines. More useful than painful.
 noremap k gk
 noremap j gj
+
+" Map Ctrl-a to highlight all code
+nmap <C-a> gg<S-v><S-g>
 
 "--------------------------
 " Folding
