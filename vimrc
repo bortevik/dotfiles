@@ -166,6 +166,7 @@ Bundle "matchit.zip"
 Bundle "tomtom/tcomment_vim"
 Bundle "TaskList.vim"
 Bundle "mileszs/ack.vim"
+Bundle 'rking/ag.vim'
 Bundle "Valloric/YouCompleteMe"
 Bundle 'IndexedSearch'
 Bundle 'Raimondi/delimitMate'
@@ -362,6 +363,9 @@ set ttymouse=xterm2 " fix mouse support inside tmux
 
 nmap fc :call CleanClose(1)<cr>
 nmap fq :call CleanClose(0)<cr>
+
+" Prettify json
+nmap =j :%!python -m json.tool<CR>
 
 function! CleanClose(tosave)
   if (a:tosave == 1)

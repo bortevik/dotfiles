@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="bortevik"
 
-plugins=(git colored-man debian heroku rails vundle bortevik)
+plugins=(git colored-man heroku rails vundle bortevik)
 
 export EDITOR=vim
 export VISUAL=vim
