@@ -10,61 +10,61 @@ let localmapleader=","
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
-nmap <Leader>bi :BundleInstall<CR>
-nmap <Leader>bu :BundleInstall!<CR> " Because this also updates
-nmap <Leader>bc :BundleClean<CR>
+Plugin 'gmarik/Vundle.vim'
+nmap <Leader>bi :PluginInstall<CR>
+nmap <Leader>bu :PluginInstall!<CR> " Because this also updates
+nmap <Leader>bc :PluginClean<CR>
 
 """"""""""""""""""""
-" My Bundles here:
+" My Plugins here:
 """"""""""""""""""""
 
 " Programming langueges
 "   JavaScript
-Bundle 'pangloss/vim-javascript'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'leshill/vim-json'
+Plugin 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'leshill/vim-json'
 "   HTML
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'othree/html5.vim'
-Bundle 'indenthtml.vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'othree/html5.vim'
+Plugin 'indenthtml.vim'
 "   Other Languages
-Bundle 'mutewinter/nginx.vim'
-Bundle 'timcharper/textile.vim'
-Bundle 'mutewinter/vim-css3-syntax'
-Bundle 'mutewinter/vim-markdown'
-Bundle "jQuery"
-Bundle "tpope/vim-haml"
-Bundle "slim-template/vim-slim"
-Bundle "groenewege/vim-less"
-Bundle "ap/vim-css-color"
-Bundle 'heartsentwined/vim-emblem'
-Bundle 'dsawardekar/ember.vim'
+Plugin 'mutewinter/nginx.vim'
+Plugin 'timcharper/textile.vim'
+Plugin 'mutewinter/vim-css3-syntax'
+Plugin 'mutewinter/vim-markdown'
+Plugin 'jQuery'
+Plugin 'tpope/vim-haml'
+Plugin 'slim-template/vim-slim'
+Plugin 'groenewege/vim-less'
+Plugin 'ap/vim-css-color'
+Plugin 'heartsentwined/vim-emblem'
+Plugin 'dsawardekar/ember.vim'
 " Ruby
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 " Toggle between do/end and curly brackets
-Bundle 'blockle.vim'
+Plugin 'blockle.vim'
 " Rails
-Bundle 'tpope/vim-rails'
-Bundle "tpope/vim-rake"
-Bundle "tpope/vim-bundler"
-Bundle 'tpope/vim-cucumber'
-Bundle 'ecomba/vim-ruby-refactoring'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-cucumber'
+Plugin 'ecomba/vim-ruby-refactoring'
 
 " NERDTree
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 nnoremap <leader>nn :NERDTreeToggle<CR>
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$' ]
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowFiles=1
 
 " Git wrapper -----------
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 nmap <Leader>gc :Gcommit -v<CR>
 nmap <Leader>gw :Gwrite<CR>
 nmap <Leader>gs :Gstatus<CR>
@@ -79,11 +79,11 @@ nmap <Leader>do :only<CR>
 nmap <Leader>gx :wincmd h<CR>:q<CR>
 
 " Indent Guides --------
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup=1
 
 " Powerline ----------
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -93,29 +93,15 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
-" Screen -------------
-" Bundle "ervandew/screen"
-" let g:ScreenImpl = 'Tmux'
-" let g:ScreenShellTmuxInitArgs = '-2'
-" let g:ScreenShellQuitOnVimExit = 0
-" let g:ScreenShellHeight = 10
-" map <F5> :ScreenShell<CR>
-" map <Leader>cc :ScreenShell bundle exec rails c<CR>
-" map <Leader>r :w<CR> :call ScreenShellSend("rspec ".@%.':'.line('.'))<CR>
-" map <Leader>R :w<CR> :call ScreenShellSend("rspec ".@%)<CR>
-" map <Leader>c :w<CR> :call ScreenShellSend("bundle exec cucumber ".@%.":".line('.')." --require features")<CR>
-" map <Leader>C :w<CR> :call ScreenShellSend("bundle exec cucumber ".@%." --require features")<CR>
-" map <Leader>b :w<CR> :call ScreenShellSend("break ".@% . ':' . line('.'))<CR>
-
 " MiniBufExplorer ----------
-Bundle "fholgado/minibufexpl.vim"
+Plugin 'fholgado/minibufexpl.vim'
 map <Leader>l :MBEToggle<CR>:MBEFocus<CR>
 let g:miniBufExplBRSplit = 1
 let g:miniBufExplVSplit = 35
 let g:miniBufExplAutoStart = 0
 
 " Tabular --------
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 noremap <Leader>t= :Tabularize /=<CR>
 noremap <Leader>t: :Tabularize /^[^:]*:\zs/l0l1<CR>
 noremap <Leader>t> :Tabularize /=><CR>
@@ -124,20 +110,20 @@ noremap <Leader>t{ :Tabularize /{<CR>
 noremap <Leader>t\| :Tabularize /\|<CR>
 
 " Zoomwin ----------
-Bundle "ZoomWin"
+Plugin 'ZoomWin'
 noremap <Leader>o :ZoomWin<CR>
 vnoremap <Leader>o <C-C>:ZoomWin<CR>
 inoremap <Leader>o <C-O>:ZoomWin<CR>
 noremap <C-W>+o :ZoomWin<CR>
 
 " Yanking hictory management
-Bundle "YankRing.vim"
+Plugin 'YankRing.vim'
 let g:yankring_replace_n_pkey = '<C-M>'
 nnoremap <silent> ,yy :YRShow<CR>
 nnoremap <silent> ,yc :YRClear<CR>
 
 " CtrlP -------
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_custom_ignore = '/\.\|\.o\|\.so\|vendor\|tmp'
 let g:ctrlp_open_new_file='r'
@@ -145,40 +131,43 @@ let g:ctrlp_max_height=30
 let g:ctrlp_lazy_update=1
 
 " Gundo ---------
-Bundle "sjl/gundo.vim"
+Plugin 'sjl/gundo.vim'
 nnoremap <C-u> :GundoToggle<CR>
 let g:gundo_width = 35
 
 " QuickFixSigns
-Bundle "tomtom/quickfixsigns_vim"
+Plugin 'tomtom/quickfixsigns_vim'
 let g:quickfixsigns_classes=['qfl', 'vcsdiff', 'breakpoints']
 
 " Color schemes
-Bundle "nanotech/jellybeans.vim"
+Plugin 'nanotech/jellybeans.vim'
+
+" Nice start screen
+Plugin 'mhinz/vim-startify'
 
 " Utilities
-Bundle "tpope/vim-surround"
-Bundle "ervandew/supertab"
-Bundle "tpope/vim-endwise"
-Bundle "msanders/snipmate.vim"
-Bundle "ecomba/vim-ruby-refactoring"
-Bundle "matchit.zip"
-Bundle "tomtom/tcomment_vim"
-Bundle "TaskList.vim"
-Bundle "mileszs/ack.vim"
-Bundle 'rking/ag.vim'
-Bundle "Valloric/YouCompleteMe"
-Bundle 'IndexedSearch'
-Bundle 'Raimondi/delimitMate'
-Bundle 'AutoTag'
+Plugin 'tpope/vim-surround'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-endwise'
+Plugin 'msanders/snipmate.vim'
+Plugin 'matchit.zip'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'TaskList.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'rking/ag.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'IndexedSearch'
+Plugin 'Raimondi/delimitMate'
+Plugin 'AutoTag'
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
 " This fork is required due to remapping ; to :
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
 
+call vundle#end()             " required!
 filetype plugin indent on     " required!
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
