@@ -1,3 +1,6 @@
+scriptencoding utf-8
+set encoding=utf-8
+
 " ----------------------------------------
 " Bindings
 " ----------------------------------------
@@ -144,6 +147,8 @@ Plugin 'nanotech/jellybeans.vim'
 
 " Nice start screen
 Plugin 'mhinz/vim-startify'
+let g:startify_bookmarks = ['~/.vimrc',]
+let g:startify_custom_footer = map(split(system('fortune ~/.vim/fortunes | cowthink -W 80'), '\n'), '"   ". v:val') + ['','']
 
 " Utilities
 Plugin 'tpope/vim-surround'
