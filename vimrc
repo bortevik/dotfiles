@@ -32,6 +32,7 @@ nmap <Leader>bc :PluginClean<CR>
 Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'leshill/vim-json'
+Plugin 'JarrodCTaylor/vim-ember-cli-test-runner'
 "   HTML
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'othree/html5.vim'
@@ -47,7 +48,6 @@ Plugin 'slim-template/vim-slim'
 Plugin 'groenewege/vim-less'
 Plugin 'ap/vim-css-color'
 Plugin 'heartsentwined/vim-emblem'
-Plugin 'dsawardekar/ember.vim'
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
 " Toggle between do/end and curly brackets
@@ -58,6 +58,7 @@ Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-cucumber'
 Plugin 'ecomba/vim-ruby-refactoring'
+Plugin 'tpope/vim-dispatch'
 
 " NERDTree
 Plugin 'scrooloose/nerdtree'
@@ -104,13 +105,8 @@ let g:miniBufExplVSplit = 35
 let g:miniBufExplAutoStart = 0
 
 " Tabular --------
-Plugin 'godlygeek/tabular'
-noremap <Leader>t= :Tabularize /=<CR>
-noremap <Leader>t: :Tabularize /^[^:]*:\zs/l0l1<CR>
-noremap <Leader>t> :Tabularize /=><CR>
-noremap <Leader>t, :Tabularize /,\zs/l0l1<CR>
-noremap <Leader>t{ :Tabularize /{<CR>
-noremap <Leader>t\| :Tabularize /\|<CR>
+Plugin 'junegunn/vim-easy-align'
+vmap <Enter> <Plug>(EasyAlign)
 
 " Zoomwin ----------
 Plugin 'ZoomWin'
@@ -151,6 +147,7 @@ let g:startify_bookmarks = ['~/.vimrc',]
 let g:startify_custom_footer = map(split(system('fortune ~/.vim/fortunes | cowthink -W 80'), '\n'), '"   ". v:val') + ['','']
 
 " Utilities
+Plugin 'justinmk/vim-sneak'
 Plugin 'tpope/vim-surround'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-endwise'
@@ -158,19 +155,35 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'matchit.zip'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'TaskList.vim'
-Plugin 'mileszs/ack.vim'
 Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'IndexedSearch'
 Plugin 'Raimondi/delimitMate'
 Plugin 'AutoTag'
+Plugin 'bkad/CamelCaseMotion'
+
+" Highlight when replace
+Plugin 'osyo-manga/vim-over'
+function! VisualFindAndReplace()
+    :OverCommandLine%s/
+    :w
+endfunction
+function! VisualFindAndReplaceWithSelection() range
+    :'<,'>OverCommandLine s/
+    :w
+endfunction
+nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
+xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
+
+Plugin 'oblitum/rainbow'
+let g:rainbow_active = 1
+
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'brown']
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
-
-" This fork is required due to remapping ; to :
-Plugin 'Lokaltog/vim-easymotion'
 
 call vundle#end()             " required!
 filetype plugin indent on     " required!
