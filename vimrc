@@ -33,14 +33,22 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'leshill/vim-json'
 Plugin 'JarrodCTaylor/vim-ember-cli-test-runner'
+nmap <Leader>res :RunSingleEmberTest<CR>
+nmap <Leader>rem :RunSingleEmberTestModule<CR>
+nmap <Leader>re :RunAllEmberTests<CR>
+nmap <Leader>rre :RerunLastEmberTests<CR>
+
 "   HTML
 Plugin 'mustache/vim-mustache-handlebars'
+let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
 Plugin 'othree/html5.vim'
 Plugin 'indenthtml.vim'
+Plugin 'mattn/emmet-vim'
+
 "   Other Languages
 Plugin 'mutewinter/nginx.vim'
 Plugin 'timcharper/textile.vim'
-Plugin 'mutewinter/vim-css3-syntax'
+Plugin 'hail2u/vim-css3-syntax'
 Plugin 'mutewinter/vim-markdown'
 Plugin 'jQuery'
 Plugin 'tpope/vim-haml'
@@ -66,6 +74,8 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$' ]
 let NERDTreeHighlightCursorline=1
 let NERDTreeShowFiles=1
+
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Git wrapper -----------
 Plugin 'tpope/vim-fugitive'
@@ -161,6 +171,10 @@ Plugin 'IndexedSearch'
 Plugin 'Raimondi/delimitMate'
 Plugin 'AutoTag'
 Plugin 'bkad/CamelCaseMotion'
+Plugin 'lukaszkorecki/CoffeeTags'
+
+" Time tracker
+Plugin 'wakatime/vim-wakatime'
 
 " Highlight when replace
 Plugin 'osyo-manga/vim-over'
@@ -174,12 +188,6 @@ function! VisualFindAndReplaceWithSelection() range
 endfunction
 nnoremap <Leader>fr :call VisualFindAndReplace()<CR>
 xnoremap <Leader>fr :call VisualFindAndReplaceWithSelection()<CR>
-
-Plugin 'oblitum/rainbow'
-let g:rainbow_active = 1
-
-let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'brown']
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
@@ -424,3 +432,4 @@ end
 
 " ruby path if you are using RVM
 let g:ruby_path = system('rvm current')
+
