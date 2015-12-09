@@ -223,9 +223,12 @@ user code."
   (setq ruby-version-manager 'rvm)
 
   (setq default-tab-width 2)
+  (setq-default evil-shift-width 2)
 
   (global-linum-mode)
   (setq-default truncate-lines t)
+  ;; (setq-default auto-fill-function 'do-auto-fill)
+  (setq truncate-partial-width-windows nil)
   (spacemacs/toggle-mode-line-minor-modes-off)
   (indent-guide-global-mode)
 

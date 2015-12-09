@@ -2,9 +2,20 @@
   "extends": "airbnb/base",
   "rules": {
     "comma-dangle": [0, "never"],
-    "key-spacing": [2, {"beforeColon": false, "afterColon": true, "mode": "minimum"}],
+    "no-multi-spaces": [2, {
+      "exceptions": {
+        "VariableDeclarator": true,
+        "ImportDeclaration": true
+      }
+    }],
+    "key-spacing": [2, {
+      "beforeColon": false,
+      "afterColon": true,
+      "mode": "minimum"
+    }],
     "func-names": 0,
-    "no-use-before-define": 0
+    "no-use-before-define": 0,
+    "id-length": 0
   },
   "globals": {
     "andThen": true,

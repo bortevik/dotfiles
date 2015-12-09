@@ -14,4 +14,5 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY=">%{$fg[red]%}#"
 ZSH_THEME_GIT_PROMPT_CLEAN=">"
 
-alias emacs="/usr/local/Cellar/emacs-mac/emacs-24.5-z-mac-5.13/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacs='/usr/local/Cellar/emacs-mac/emacs-24.5-z-mac-5.13/Emacs.app/Contents/MacOS/Emacs -nw'
+alias lvh='rails s -p 3000 -b lvh.me'
