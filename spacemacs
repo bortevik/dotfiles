@@ -33,15 +33,12 @@ values."
      ;; spell-checking
      syntax-checking
      org
-     (perspectives :variables
-                   perspective-enable-persp-projectile t)
      osx
 
      (git :variables
           git-magit-status-fullscreen t)
      version-control
      auto-completion
-     dash
 
      markdown
      javascript
@@ -105,7 +102,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    ;; dotspacemacs-default-font '("Source Code Pro"
-   dotspacemacs-default-font '("Monaco"
+   dotspacemacs-default-font '("Monaco for Powerline"
                                :size 16
                                :weight normal
                                :width normal
@@ -254,6 +251,7 @@ user code."
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+    (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
   ;; check when opening large files
@@ -266,11 +264,8 @@ user code."
         (fundamental-mode))))
   (add-hook 'find-file-hook 'spacemacs/check-large-file)
 
-  (evil-leader/set-key "pp" 'projectile-persp-switch-project)
-
   (setq magit-repository-directories '("~/code/"))
 
-  (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
