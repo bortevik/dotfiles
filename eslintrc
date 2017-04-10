@@ -1,5 +1,7 @@
 {
-  "extends": "airbnb/base",
+  "ecmaFeatures": {
+    "experimentalObjectRestSpread": true
+  },
   "rules": {
     "comma-dangle": [0, "never"],
     "no-multi-spaces": 0,
@@ -16,11 +18,14 @@
     "no-underscore-dangle": 0,
     "max-len": 0,
     "space-before-function-paren": 0,
+    "import/extentions": "never",
     "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0,
     "arrow-body-style": 0,
     "newline-per-chained-call": 0,
     "array-callback-return": 0,
-    "prefer-arrow-callback": 0
+    "prefer-arrow-callback": 0,
+    "arrow-parens": ["error", "as-needed"]
   },
   "globals": {
     "andThen": true,
