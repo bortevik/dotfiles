@@ -49,9 +49,7 @@ values."
 
      (git :variables
           git-magit-status-fullscreen t)
-     (version-control :variables
-                      version-control-diff-tool 'diff-hl'
-                      version-control-global-margin t)
+     version-control
      auto-completion
 
      markdown
@@ -108,7 +106,7 @@ values."
    ;; when the current branch is not `develop'. Note that checking for
    ;; new versions works via git commands, thus it calls GitHub services
    ;; whenever you start Emacs. (default nil)
-   dotspacemacs-check-for-update nil
+   dotspacemacs-check-for-update t
    ;; If non-nil, a form that evaluates to a package directory. For example, to
    ;; use different package directories for different Emacs versions, set this
    ;; to `emacs-version'.
